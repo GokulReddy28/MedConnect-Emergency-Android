@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.medconnect.emergency">
+
+    <!-- 🌍 Required Permissions -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Tell Play Store that telephony (calling) is optional -->
+    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="MedConnect Emergency"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- 🔑 LOGIN SCREEN (Launcher) -->
+        <activity
+            android:name="com.medconnect.emergency.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 🆘 MAIN SCREENS -->
+        <activity
+            android:name="com.medconnect.emergency.mainActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.medconnect.emergency.PatientDashboard"
+            android:exported="true" />
+
+        <activity
+            android:name="com.medconnect.emergency.DoctorDashboard"
+            android:exported="true" />
+
+        <activity
+            android:name="com.medconnect.emergency.HospitalDashboard"
+            android:exported="true" />
+
+        <activity
+            android:name="com.medconnect.emergency.CaseDetailsActivity"
+            android:exported="true" />
+
+    </application>
+
+</manifest>
